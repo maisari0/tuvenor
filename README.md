@@ -1,2 +1,2 @@
-# tuvex
-Source code for tuvex.fi, a personal website
+# tuvenor
+Source code for tuvenor.fi, a personal website
