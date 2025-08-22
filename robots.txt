@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /thank-you.html
 Allow: /
-Sitemap: https://tuvex.fi/sitemap.xml
+
+Sitemap: https://tuvenor.fi/sitemap.xml
