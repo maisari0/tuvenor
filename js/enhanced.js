@@ -14,7 +14,7 @@ const translations = {
         'hero-cta': "Connect with Us",
         'about-title': "About Tuvenor",
         'about-p1': "Tuvenor specializes in outsourcing and exporting high-quality components, raw materials, and technology from Nordic countries to global markets. We serve businesses seeking advanced solutions, including industrial raw materials like bitumen for manufacturing, procurement services, and innovative sourcing. With our deep understanding of Nordic excellence and international market needs, we bridge the gap between suppliers and businesses worldwide, delivering reliable, tailored solutions for sustainable growth.",
-        'about-p2': "",
+        'about-p2': "", // This was empty in the provided text, so keeping it empty.
         'services-title': "Our Services",
         'service1-title': "Global Import-Export Trade",
         'service1-desc': "We facilitate seamless trade between Nordic suppliers and international businesses, handling logistics, documentation, and regulatory compliance for products like raw materials and components.",
@@ -59,7 +59,7 @@ const translations = {
         'hero-cta': "Ota meihin yhteyttä",
         'about-title': "Tietoa Tuvenorista",
         'about-p1': "Tuvenor on erikoistunut korkealaatuisten komponenttien, raaka-aineiden ja teknologian ulkoistamiseen ja vientiin Pohjoismaista globaaleille markkinoille. Palvelemme yrityksiä, jotka etsivät edistyksellisiä ratkaisuja, mukaan lukien teolliset raaka-aineet, kuten bitumi valmistukseen, hankintapalvelut ja innovatiivinen materiaalien hankinta. Syvällisen ymmärryksemme pohjoismaisesta huippuosaamisesta ja kansainvälisten markkinoiden tarpeista toimimme siltana toimittajien ja yritysten välillä maailmanlaajuisesti, tarjoten luotettavia, räätälöityjä ratkaisuja kestävään kasvuun.",
-        'about-p2': "",
+        'about-p2': "", // This was empty in the provided text, so keeping it empty.
         'services-title': "Palvelumme",
         'service1-title': "Globaali tuonti- ja vientikauppa",
         'service1-desc': "Helpotamme sujuvaa kaupankäyntiä pohjoismaisten toimittajien ja kansainvälisten yritysten välillä, hoitaen logistiikan, dokumentaation ja säädösten noudattamisen tuotteille, kuten raaka-aineille ja komponenteille.",
@@ -92,6 +92,7 @@ const translations = {
         'footer-privacy': "Tietosuojakäytäntö",
         'footer-terms': "Käyttöehdot"
     }
+    // You will add the 'ar' (Arabic) translation here when it's provided.
 };
 
 const updateContent = (lang) => {
@@ -101,7 +102,10 @@ const updateContent = (lang) => {
             element.textContent = translations[lang][key];
         }
     });
-    document.title = translations[lang]['site-title'];
+    // Update the document title based on the selected language
+    if (translations[lang] && translations[lang]['site-title']) {
+        document.title = translations[lang]['site-title'];
+    }
     document.body.setAttribute('data-lang', lang);
 };
 
@@ -110,21 +114,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
-    
+
     if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener('click', function() {
             navMenu.classList.toggle('active');
             mobileMenuToggle.classList.toggle('active');
         });
     }
-    
+
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('a[href^="#"]');
-    
+
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            
+
             // Close mobile menu if open
             if (navMenu && navMenu.classList.contains('active')) {
                 navMenu.classList.remove('active');
@@ -132,31 +136,31 @@ document.addEventListener('DOMContentLoaded', function() {
                     mobileMenuToggle.classList.remove('active');
                 }
             }
-            
+
             const targetId = this.getAttribute('href');
             if (targetId.length > 1) { // Check if href is not just '#'
                 const targetElement = document.querySelector(targetId);
-                
+
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetElement.offsetTop - 80, // Adjust for header height
                         behavior: 'smooth'
                     });
                 }
             }
         });
     });
-    
+
     // Language toggle functionality
     const languageToggles = document.querySelectorAll('.lang-toggle');
-    
+
     languageToggles.forEach(toggle => {
         toggle.addEventListener('click', function(e) {
             e.preventDefault();
             const lang = this.getAttribute('data-lang');
             updateContent(lang);
-            
-            // Update active classes
+
+            // Update active classes for all language toggles
             languageToggles.forEach(t => {
                 t.classList.remove('active');
             });
@@ -164,13 +168,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Initial content update based on default language
-    const initialLang = document.querySelector('.lang-toggle.active')?.getAttribute('data-lang') || 'en';
-    updateContent(initialLang);
+    // Initial content update based on default language (from HTML body's data-lang or 'en')
+    const initialLang = document.body.getAttribute('data-lang') || 'en';
+    // Ensure the correct active class is set on initial load
+    languageToggles.forEach(toggle => {
+        if (toggle.getAttribute('data-lang') === initialLang) {
+            toggle.classList.add('active');
+        } else {
+            toggle.classList.remove('active');
+        }
+    });
+    updateContent(initialLang); // Apply initial translations
 
     // Form validation
     const contactForm = document.getElementById('contactForm');
-    
+
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             // This part is for form submission to Netlify, which doesn't need client-side validation for redirection.
@@ -179,11 +191,11 @@ document.addEventListener('DOMContentLoaded', function() {
             // Your form validation logic
         });
     }
-    
+
     // Intersection Observer for animation triggers
     if ('IntersectionObserver' in window) {
         const animatedElements = document.querySelectorAll('.hidden');
-        
+
         const animationObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -195,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         });
-        
+
         animatedElements.forEach(element => {
             animationObserver.observe(element);
         });
