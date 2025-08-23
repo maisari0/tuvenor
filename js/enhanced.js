@@ -1,12 +1,117 @@
 // JavaScript for enhanced website functionality
 
+// Language Translations
+const translations = {
+    en: {
+        'site-title': "Tuvenor | Finnish Engineering Exports to Middle East",
+        'nav-home': "Home",
+        'nav-about': "About",
+        'nav-services': "Services",
+        'nav-why-choose-us': "Why Choose Us",
+        'nav-contact': "Contact",
+        'hero-title': "Bridging Nordic Innovation with Global Markets",
+        'hero-subtitle': "Outsourcing premium solutions and connecting businesses between Nordic excellence and worldwide opportunities",
+        'hero-cta': "Connect with Us",
+        'about-title': "About Tuvenor",
+        'about-p1': "Tuvenor specializes in outsourcing and exporting high-quality components, raw materials, and technology from Nordic countries to global markets. We serve businesses seeking advanced solutions, including industrial raw materials like bitumen for manufacturing, procurement services, and innovative sourcing. With our deep understanding of Nordic excellence and international market needs, we bridge the gap between suppliers and businesses worldwide, delivering reliable, tailored solutions for sustainable growth.",
+        'about-p2': "With our deep understanding of both Nordic engineering excellence and Middle Eastern market needs, we bridge the gap between manufacturers and businesses seeking reliable, innovative solutions.",
+        'services-title': "Our Services",
+        'service1-title': "Global Import-Export Trade",
+        'service1-desc': "We facilitate seamless trade between Nordic suppliers and international businesses, handling logistics, documentation, and regulatory compliance for products like raw materials and components.",
+        'service2-title': "Market Research & Sourcing",
+        'service2-desc': "Our team identifies the best Nordic solutions—such as raw materials for manufacturing—to meet your specific requirements, conducting thorough global market research for optimal matches.",
+        'service3-title': "Procurement & Supply Chain Solutions",
+        'service3-desc': "We optimize your supply chain with reliable Nordic products, managing outsourcing and procurement processes from order to delivery.",
+        'service4-title': "Specialized Outsourcing & Export Services",
+        'service4-desc': "Access cutting-edge Nordic innovations and raw materials through our specialized services, tailored to your industry needs and global demands.",
+        'why-choose-title': "Why Choose Us",
+        'why-choose1-title': "Expertise in Nordic Engineering",
+        'why-choose1-desc': "Our deep connections with Nordic suppliers and understanding of regional excellence ensure you receive premium products and solutions, from engineering to raw materials.",
+        'why-choose2-title': "In-Depth Global Market Knowledge",
+        'why-choose2-desc': "With extensive experience in international markets, we navigate local practices, regulations, and needs to deliver smooth, efficient outsourcing and trade.",
+        'why-choose3-title': "Agile and Reliable B2B Partner",
+        'why-choose3-desc': "We pride ourselves on responsive service, transparent communication, and reliable delivery, making us the ideal partner for your global business needs.",
+        'contact-title': "Contact Us",
+        'form-name': "Name",
+        'form-email': "Email",
+        'form-subject': "Subject",
+        'form-message': "Message",
+        'form-submit': "Send Message",
+        'email-title': "Email",
+        'email-hours': "Every day from 09:00 - 17:00",
+        'email-address': "info@tuvenor.fi",
+        'email-button': "Mail with Us",
+        'footer-business-id': "Business ID (Y-tunnus): 3518694-1",
+        'footer-location': "Located in Espoo, Finland",
+        'footer-copyright': "© 2025 tuvenor. All rights reserved.",
+        'footer-privacy': "Privacy Policy",
+        'footer-terms': "Terms of Service"
+    },
+    fi: {
+        'site-title': "tuvenor | Pohjoismaisen teknologian vienti maailmanlaajuisille markkinoille",
+        'nav-home': "Koti",
+        'nav-about': "Tietoa meistä",
+        'nav-services': "Palvelut",
+        'nav-why-choose-us': "Miksi valita meidät",
+        'nav-contact': "Ota yhteyttä",
+        'hero-title': "Yhdistämme pohjoismaisen innovaation ja globaalit markkinat",
+        'hero-subtitle': "Ulkoistamme laadukkaita ratkaisuja ja yhdistämme yrityksiä pohjoismaisen huippuosaamisen ja maailmanlaajuisten mahdollisuuksien välillä",
+        'hero-cta': "Ota meihin yhteyttä",
+        'about-title': "Tietoa Tuvenorista",
+        'about-p1': "Tuvenor on erikoistunut korkealaatuisten komponenttien, raaka-aineiden ja teknologian ulkoistamiseen ja vientiin Pohjoismaista maailmanlaajuisille markkinoille. Palvelemme yrityksiä, jotka etsivät edistyksellisiä ratkaisuja, kuten teollisia raaka-aineita, hankintapalveluita ja innovatiivista materiaalien hankintaa. Syvällisen ymmärryksemme ansiosta pohjoismaisesta huippuosaamisesta ja kansainvälisten markkinoiden tarpeista toimimme siltana toimittajien ja yritysten välillä maailmanlaajuisesti, tarjoten luotettavia ja räätälöityjä ratkaisuja kestävään kasvuun.",
+        'about-p2': "Syvällisen ymmärryksemme ansiosta pohjoismaisesta insinööriosaamisesta ja Lähi-idän markkinoiden tarpeista toimimme siltana valmistajien ja luotettavia ja innovatiivisia ratkaisuja etsivien yritysten välillä.",
+        'services-title': "Palvelumme",
+        'service1-title': "Globaali tuonti- ja vientikauppa",
+        'service1-desc': "Mahdollistamme sujuvan kaupankäynnin pohjoismaisten toimittajien ja kansainvälisten yritysten välillä, hoitaen logistiikan, dokumentaation ja säädösten noudattamisen esimerkiksi raaka-aineiden ja komponenttien osalta.",
+        'service2-title': "Markkinatutkimus ja hankinta",
+        'service2-desc': "Tiimimme tunnistaa parhaat pohjoismaiset ratkaisut – kuten raaka-aineet valmistukseen – täyttääksemme vaatimuksesi, suorittaen perusteellista globaalia markkinatutkimusta optimaalisten vastaavuuksien löytämiseksi.",
+        'service3-title': "Hankinta- ja toimitusketjuratkaisut",
+        'service3-desc': "Optimoimme toimitusketjusi luotettavilla pohjoismaisilla tuotteilla, halliten ulkoistus- ja hankintaprosesseja tilauksesta toimitukseen.",
+        'service4-title': "Erikoistuneet ulkoistus- ja vientipalvelut",
+        'service4-desc': "Pääset käsiksi huippuluokan pohjoismaisiin innovaatioihin ja raaka-aineisiin erikoistuneiden palveluidemme kautta, jotka on räätälöity alasi tarpeisiin ja globaaleihin vaatimuksiin.",
+        'why-choose-title': "Miksi valita meidät",
+        'why-choose1-title': "Pohjoismaisen insinööriosaamisen asiantuntemus",
+        'why-choose1-desc': "Syvät yhteytemme pohjoismaisiin toimittajiin ja ymmärryksemme alueellisesta huippuosaamisesta varmistavat, että saat ensiluokkaisia tuotteita ja ratkaisuja, insinööriosaamisesta raaka-aineisiin.",
+        'why-choose2-title': "Syvällinen globaali markkinatuntemus",
+        'why-choose2-desc': "Laajan kokemuksemme kansainvälisillä markkinoilla avulla navigoimme paikallisissa käytännöissä, säädöksissä ja tarpeissa varmistaaksemme sujuvan ja tehokkaan ulkoistamisen ja kaupankäynnin.",
+        'why-choose3-title': "Ketterä ja luotettava B2B-kumppani",
+        'why-choose3-desc': "Olemme ylpeitä nopeasta palvelusta, läpinäkyvästä viestinnästä ja luotettavasta toimituksesta, mikä tekee meistä ihanteellisen kumppanin globaaleihin liiketoimintatarpeisiisi.",
+        'contact-title': "Ota meihin yhteyttä",
+        'form-name': "Nimi",
+        'form-email': "Sähköposti",
+        'form-subject': "Aihe",
+        'form-message': "Viesti",
+        'form-submit': "Lähetä viesti",
+        'email-title': "Sähköposti",
+        'email-hours': "Joka päivä klo 09:00 - 17:00",
+        'email-address': "info@tuvenor.fi",
+        'email-button': "Lähetä sähköpostia",
+        'footer-business-id': "Y-tunnus: 3518694-1",
+        'footer-location': "Sijaitsee Espoossa, Suomessa",
+        'footer-copyright': "© 2025 tuvenor. Kaikki oikeudet pidätetään.",
+        'footer-privacy': "Tietosuojakäytäntö",
+        'footer-terms': "Käyttöehdot"
+    }
+};
+
+const updateContent = (lang) => {
+    document.querySelectorAll('[data-key]').forEach(element => {
+        const key = element.getAttribute('data-key');
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+    document.title = translations[lang]['site-title'];
+    document.body.setAttribute('data-lang', lang);
+};
+
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
     
-    if (mobileMenuToggle && navMenu) {
+    if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener('click', function() {
             navMenu.classList.toggle('active');
             mobileMenuToggle.classList.toggle('active');
@@ -18,18 +123,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            if (this.getAttribute('href').length > 1) {
-                e.preventDefault();
-                
-                // Close mobile menu if open
-                if (navMenu && navMenu.classList.contains('active')) {
-                    navMenu.classList.remove('active');
-                    if (mobileMenuToggle) {
-                        mobileMenuToggle.classList.remove('active');
-                    }
+            e.preventDefault();
+            
+            // Close mobile menu if open
+            if (navMenu && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                if (mobileMenuToggle) {
+                    mobileMenuToggle.classList.remove('active');
                 }
-                
-                const targetId = this.getAttribute('href');
+            }
+            
+            const targetId = this.getAttribute('href');
+            if (targetId.length > 1) { // Check if href is not just '#'
                 const targetElement = document.querySelector(targetId);
                 
                 if (targetElement) {
@@ -43,120 +148,46 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Language toggle functionality
-    const languageToggles = document.querySelectorAll('.language-toggle a, .footer-language-toggle a');
+    const languageToggles = document.querySelectorAll('.lang-toggle');
     
     languageToggles.forEach(toggle => {
         toggle.addEventListener('click', function(e) {
             e.preventDefault();
+            const lang = this.getAttribute('data-lang');
+            updateContent(lang);
             
-            // Remove active class from all toggles in the same group
-            const parentToggle = this.closest('.language-toggle') || this.closest('.footer-language-toggle');
-            if (parentToggle) {
-                const siblings = parentToggle.querySelectorAll('a');
-                siblings.forEach(sibling => {
-                    sibling.classList.remove('active');
-                });
-            }
-            
-            // Add active class to clicked toggle
+            // Update active classes
+            languageToggles.forEach(t => {
+                t.classList.remove('active');
+            });
             this.classList.add('active');
-            
-            // Here you would normally implement actual language switching
-            // For demo purposes, we're just toggling the active state
-            
-            // Sync the other language toggle if it exists
-            const isFooterToggle = this.closest('.footer-language-toggle') !== null;
-            const lang = this.textContent.trim();
-            
-            if (isFooterToggle) {
-                const headerToggles = document.querySelectorAll('.language-toggle a');
-                headerToggles.forEach(headerToggle => {
-                    if (headerToggle.textContent.trim() === lang) {
-                        headerToggle.classList.add('active');
-                    } else {
-                        headerToggle.classList.remove('active');
-                    }
-                });
-            } else {
-                const footerToggles = document.querySelectorAll('.footer-language-toggle a');
-                footerToggles.forEach(footerToggle => {
-                    if (footerToggle.textContent.trim() === lang) {
-                        footerToggle.classList.add('active');
-                    } else {
-                        footerToggle.classList.remove('active');
-                    }
-                });
-            }
         });
     });
-    
+
+    // Initial content update based on default language
+    const initialLang = document.querySelector('.lang-toggle.active')?.getAttribute('data-lang') || 'en';
+    updateContent(initialLang);
+
     // Form validation
     const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Basic validation
-            let isValid = true;
-            const formElements = this.elements;
-            
-            for (let i = 0; i < formElements.length; i++) {
-                if (formElements[i].hasAttribute('required') && !formElements[i].value.trim()) {
-                    isValid = false;
-                    formElements[i].classList.add('error');
-                } else if (formElements[i].type === 'email' && formElements[i].value.trim()) {
-                    // Simple email validation
-                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailPattern.test(formElements[i].value.trim())) {
-                        isValid = false;
-                        formElements[i].classList.add('error');
-                    } else {
-                        formElements[i].classList.remove('error');
-                    }
-                } else {
-                    formElements[i].classList.remove('error');
-                }
-            }
-            
-            if (isValid) {
-                // In a real application, you would send the form data to a server
-                // For demo purposes, we'll just show a success message
-                const formWrapper = contactForm.parentElement;
-                const successMessage = document.createElement('div');
-                successMessage.className = 'success-message animate-fade-in';
-                successMessage.innerHTML = '<p>Thank you for your message! We will get back to you soon.</p>';
-                
-                // Hide the form and show success message
-                contactForm.style.display = 'none';
-                formWrapper.appendChild(successMessage);
-                
-                // Reset form for future use
-                contactForm.reset();
-            }
+            // This part is for form submission to Netlify, which doesn't need client-side validation for redirection.
+            // The `action` attribute handles it. If you have custom validation, keep it here.
+            // e.preventDefault();
+            // Your form validation logic
         });
     }
     
     // Intersection Observer for animation triggers
     if ('IntersectionObserver' in window) {
-        const animatedElements = document.querySelectorAll('.animate-fade-in, .animate-slide-up, .animate-slide-in-left, .animate-slide-in-right, .animate-scale');
-        const sectionHeaders = document.querySelectorAll('.section-header');
+        const animatedElements = document.querySelectorAll('.hidden');
         
         const animationObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // If the element has a delay class, keep it
-                    const hasDelay = Array.from(entry.target.classList).some(className => className.startsWith('delay-'));
-                    
-                    // If no delay, add the animation immediately
-                    if (!hasDelay) {
-                        entry.target.style.animationDelay = '0s';
-                    }
-                    
-                    // Add visible class to trigger animation
                     entry.target.classList.add('visible');
-                    
-                    // Unobserve after animation is triggered
                     animationObserver.unobserve(entry.target);
                 }
             });
@@ -165,50 +196,8 @@ document.addEventListener('DOMContentLoaded', function() {
             rootMargin: '0px 0px -50px 0px'
         });
         
-        const headerObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-                    headerObserver.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-        
-        // Observe all animated elements
         animatedElements.forEach(element => {
             animationObserver.observe(element);
-        });
-        
-        // Observe all section headers
-        sectionHeaders.forEach(header => {
-            headerObserver.observe(header);
-        });
-    }
-    
-    // Performance optimization - lazy load background images
-    const lazyBackgrounds = document.querySelectorAll('.hero-section, .about-section, .why-choose-section');
-    
-    if ('IntersectionObserver' in window) {
-        const backgroundObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible-background');
-                    backgroundObserver.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-        
-        lazyBackgrounds.forEach(bg => {
-            backgroundObserver.observe(bg);
-        });
-    } else {
-        // Fallback for browsers that don't support IntersectionObserver
-        lazyBackgrounds.forEach(bg => {
-            bg.classList.add('visible-background');
         });
     }
 });
