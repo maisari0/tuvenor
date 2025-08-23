@@ -396,7 +396,6 @@
 
         /* Why Choose Us Section */
         .why-choose-section {
-            /* Changed background to 1.jpg as requested */
             background: linear-gradient(rgba(244, 244, 244, 0.9), rgba(244, 244, 244, 0.9)), url('images/backgrounds/1.jpg') no-repeat center center/cover;
             padding: 3rem 0;
         }
@@ -587,19 +586,6 @@
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .email-contact-section a.email-button::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
         .email-contact-section a.email-button:hover::before {
             width: 300px;
             height: 300px;
@@ -609,37 +595,6 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
-
-        /* WhatsApp Button - Removed */
-        /* .whatsapp-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--whatsapp-bg);
-            color: var(--white);
-            padding: 1rem 1.5rem;
-            border-radius: var(--border-radius);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 500;
-            transition: transform 0.3s, background-color 0.3s;
-            z-index: 1000;
-        }
-
-        .whatsapp-button:hover {
-            transform: translateY(-5px);
-            background-color: #20c058;
-        }
-
-        .whatsapp-button i {
-            font-size: 1.5rem;
-        }
-
-        .whatsapp-button span {
-            font-size: 1rem;
-        } */
 
         /* Footer */
         .footer {
@@ -1031,7 +986,7 @@ With our deep understanding of Nordic excellence and international market needs,
                 <div class="section-header">
                     <h2 data-key="contact-title">Contact Us</h2>
                 </div>
-                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contactForm" class="contact-form" action="/thank-you.html">
+                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contactForm" class="contact-form" action="/thank-you"> <!-- Changed action here -->
                     <input type="hidden" name="form-name" value="contact">
                     <!-- Honeypot Field -->
                     <div class="form-group honeypot">
@@ -1071,12 +1026,6 @@ With our deep understanding of Nordic excellence and international market needs,
         </section>
     </main>
 
-    <!-- WhatsApp Button - Removed as requested -->
-    <!-- <a href="https://wa.me/+358400492800" target="_blank" class="whatsapp-button" aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-        <span>WhatsApp</span>
-    </a> -->
-
     <!-- Footer -->
     <footer class="footer hidden">
         <div class="container">
@@ -1085,14 +1034,8 @@ With our deep understanding of Nordic excellence and international market needs,
                     <img src="images/tuvenor-logo-rectangular1.png" alt="tuvenor Logo">
                 </div>
                 <div class="footer-info">
-                    <!-- Business ID and Location removed as requested -->
                     <p data-key="footer-copyright">© 2025 Tuvenor. All rights reserved.</p>
                 </div>
-                <!-- Footer links (Privacy Policy, Terms of Service) removed as requested -->
-                <!-- <div class="footer-links">
-                    <a href="#" data-key="footer-privacy">Privacy Policy</a>
-                    <a href="#" data-key="footer-terms">Terms of Service</a>
-                </div> -->
             </div>
         </div>
     </footer>
@@ -1141,7 +1084,6 @@ With our deep understanding of Nordic excellence and international market needs,
                 'email-address': "info@tuvenor.fi",
                 'email-button': "Mail with Us",
                 'footer-copyright': "© 2025 Tuvenor. All rights reserved."
-                // Removed: 'footer-business-id', 'footer-location', 'footer-privacy', 'footer-terms'
             },
             fi: {
                 'site-title': "Tuvenor | Pohjoismainen innovaatio globaaleille markkinoille",
@@ -1183,7 +1125,6 @@ With our deep understanding of Nordic excellence and international market needs,
                 'email-address': "info@tuvenor.fi",
                 'email-button': "Lähetä sähköpostia",
                 'footer-copyright': "© 2025 tuvenor. Kaikki oikeudet pidätetään."
-                // Removed: 'footer-business-id', 'footer-location', 'footer-privacy', 'footer-terms'
             }
             // Add 'ar' (Arabic) translation here when provided by the user.
         };
