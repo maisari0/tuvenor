@@ -9,46 +9,54 @@
     <meta name="author" content="tuvenor">
     <meta name="robots" content="index, follow">
 
+    <!-- Open Graph / Social Media -->
     <meta property="og:title" content="tuvenor | Finnish Engineering Exports to Middle East">
     <meta property="og:description" content="Export Finnish engineering solutions to the Middle East with tuvenor. Access premium Nordic technology and expertise. Contact us today!">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tuvenor.fi">
     <meta property="og:image" content="images/tuvenor-logo-rectangular.png">
 
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="tuvenor | Finnish Engineering Exports to Middle East">
     <meta name="twitter:description" content="Export Finnish engineering solutions to the Middle East with tuvenor. Access premium Nordic technology and expertise. Contact us today!">
     <meta name="twitter:image" content="images/tuvenor-logo-rectangular.png">
 
+    <!-- Canonical URL -->
     <link rel="canonical" href="https://tuvenor.fi">
 
+    <!-- Language Alternates -->
     <link rel="alternate" hreflang="en" href="https://tuvenor.fi/en">
     <link rel="alternate" hreflang="fi" href="https://tuvenor.fi/fi">
 
+    <!-- Preload Hero Image -->
     <link rel="preload" href="images/backgrounds/1.jpg" as="image">
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
+    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+    <!-- Favicon -->
     <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
 
     <style>
         /* CSS Variables */
         :root {
-    --primary-color: #003366; /* Deep navy blue for a professional base */
-    --secondary-color: #e6f0ff; /* Light blue tint for backgrounds */
-    --accent-color: #3399ff; /* Vibrant blue for accents and calls-to-action */
-    --text-color: #333;
-    --white: #fff;
-    --max-width: 1200px;
-    --padding: 1rem;
-    --border-radius: 8px;
-    --whatsapp-bg: #25D366;
-    --email-button-bg: #8B6F47; /* Kept for reference but not used */
-}
+            --primary-color: #003366; /* Deep navy blue for a professional base */
+            --secondary-color: #e6f0ff; /* Light blue tint for backgrounds */
+            --accent-color: #3399ff; /* Vibrant blue for accents and calls-to-action */
+            --text-color: #333;
+            --white: #fff;
+            --max-width: 1200px;
+            --padding: 1rem;
+            --border-radius: 8px;
+            --whatsapp-bg: #25D366;
+            --email-button-bg: #8B6F47; /* Kept for reference but not used */
+        }
 
         /* Reset and Base Styles */
         * {
@@ -99,7 +107,9 @@
             padding: 0 var(--padding);
             position: relative;
             z-index: 1;
-        }... /* Hidden class for animation */
+        }
+
+        /* Hidden class for animation */
         .hidden {
             opacity: 0;
             transform: translateY(50px);
@@ -254,7 +264,9 @@
             margin-bottom: 2rem;
             animation: fadeIn 1s ease-in 0.2s;
             animation-fill-mode: both;
-        }... .cta-button {
+        }
+
+        .cta-button {
             display: inline-block;
             padding: 0.75rem 1.5rem;
             background-color: var(--accent-color);
@@ -262,37 +274,15 @@
             border-radius: var(--border-radius);
             font-weight: 500;
             position: relative;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            animation: pulse 1.5s infinite;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            cursor: pointer;
         }
 
-        .cta-button {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: var(--accent-color);
-    color: var(--white);
-    border-radius: var(--border-radius);
-    font-weight: 500;
-    position: relative;
-    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-    cursor: pointer;
-    /* Remove animation: pulse 1.5s infinite; if present! */
-}
-
-/* Remove ::before block entirely! */
-
-/* Clean hover effect */
-.cta-button:hover {
-    background-color: #ffa040; /* Lighter shade or use the color for your active state */
-    transform: translateY(-1px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.13);
-}
-
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            background-color: #ffa040; /* Lighter shade or use the color for your active state */
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.13);
         }
 
         /* Section Styles */
@@ -405,50 +395,48 @@
         }
 
         /* Why Choose Us Section */
-.why-choose-section {
-    background: linear-gradient(rgba(244, 244, 244, 0.9), rgba(244, 244, 244, 0.9)), url('images/backgrounds/steel-bg.jpg') no-repeat center center/cover;
-    padding: 3rem 0;
-}
+        .why-choose-section {
+            background: linear-gradient(rgba(244, 244, 244, 0.9), rgba(244, 244, 244, 0.9)), url('images/backgrounds/steel-bg.jpg') no-repeat center center/cover;
+            padding: 3rem 0;
+        }
 
-.why-choose-grid {
-    display: grid;
-    /* This next line is the ONLY change needed to force a single column */
-    grid-template-columns: 1fr; 
-    gap: 2rem;
-    /* Optional: Add these two lines to center the content and limit its width */
-    max-width: 800px;
-    margin: 0 auto;
-}
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: 1fr; 
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-.why-choose-card {
-    padding: 1.5rem;
-    background-color: var(--white);
-    border-radius: var(--border-radius);
-    position: relative;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
+        .why-choose-card {
+            padding: 1.5rem;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            position: relative;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
 
-.why-choose-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
+        .why-choose-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
 
-.why-choose-number {
-    font-size: 2rem;
-    color: var(--accent-color);
-    margin-bottom: 0.5rem;
-    transition: transform 0.3s ease;
-}
+        .why-choose-number {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+            transition: transform 0.3s ease;
+        }
 
-.why-choose-card:hover .why-choose-number {
-    transform: scale(1.2);
-}
+        .why-choose-card:hover .why-choose-number {
+            transform: scale(1.2);
+        }
 
-.why-choose-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--primary-color);
-}
+        .why-choose-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
 
         /* Contact Section */
         .contact-section {
@@ -555,7 +543,9 @@
             font-size: 2rem;
             color: var(--primary-color);
             margin-bottom: 0.5rem;
-        }... .email-contact-section h3 {
+        }
+        
+        .email-contact-section h3 {
             font-size: 1.5rem;
             font-weight: 700;
             text-transform: uppercase;
@@ -587,6 +577,7 @@
             padding: 0.75rem 2rem;
             background-color: var(--accent-color); /* Updated to match website's button style */
             color: var(--white);
+            border: none;
             border-radius: var(--border-radius);
             font-weight: 500;
             text-transform: uppercase;
@@ -715,7 +706,9 @@
         @keyframes slideUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
-        }... @keyframes bounceIn {
+        }
+
+        @keyframes bounceIn {
             0% { opacity: 0; transform: scale(0.3); }
             50% { opacity: 1; transform: scale(1.05); }
             70% { transform: scale(0.9); }
@@ -879,7 +872,9 @@
 
             .email-contact-section i {
                 font-size: 1.5rem;
-            }... .email-contact-section h3 {
+            }
+            
+            .email-contact-section h3 {
                 font-size: 1.2rem;
             }
 
@@ -903,7 +898,9 @@
         </div>
     </noscript>
 
+    <!-- Main content wrapper -->
     <main>
+        <!-- Header Section -->
         <header class="header">
             <div class="container">
                 <div class="header-content">
@@ -937,6 +934,7 @@
             </div>
         </header>
 
+        <!-- Hero Section -->
         <section id="home" class="hero-section">
             <div class="container">
                 <div class="hero-content">
@@ -947,6 +945,7 @@
             </div>
         </section>
 
+        <!-- About Section -->
         <section id="about" class="about-section hidden">
             <div class="container">
                 <div class="section-header">
@@ -959,6 +958,7 @@ With our deep understanding of Nordic excellence and international market needs,
             </div>
         </section>
 
+        <!-- Services Section -->
         <section id="services" class="services-section hidden">
             <div class="container">
                 <div class="section-header">
@@ -996,7 +996,10 @@ With our deep understanding of Nordic excellence and international market needs,
                     </div>
                 </div>
             </div>
-        </section>... <section id="why-choose-us" class="why-choose-section hidden">
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section id="why-choose-us" class="why-choose-section hidden">
             <div class="container">
                 <div class="section-header">
                     <h2 data-key="why-choose-title">Why Choose Us</h2>
@@ -1019,13 +1022,17 @@ With our deep understanding of Nordic excellence and international market needs,
                     </div>
                 </div>
             </div>
-        </section>... <section id="contact" class="contact-section hidden">
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section hidden">
             <div class="container">
                 <div class="section-header">
                     <h2 data-key="contact-title">Contact Us</h2>
                 </div>
                 <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contactForm" class="contact-form" action="/thank-you.html">
                     <input type="hidden" name="form-name" value="contact">
+                    <!-- Honeypot Field -->
                     <div class="form-group honeypot">
                         <label for="bot-field">Leave this blank</label>
                         <input type="text" name="bot-field" id="bot-field" class="form-control">
@@ -1051,6 +1058,7 @@ With our deep understanding of Nordic excellence and international market needs,
             </div>
         </section>
 
+        <!-- Email Contact Section -->
         <section class="email-contact-section hidden">
             <div class="container">
                 <i class="fas fa-envelope"></i>
@@ -1062,8 +1070,13 @@ With our deep understanding of Nordic excellence and international market needs,
         </section>
     </main>
 
-    
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/+358400492800" target="_blank" class="whatsapp-button" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span>WhatsApp</span>
+    </a>
 
+    <!-- Footer -->
     <footer class="footer hidden">
         <div class="container">
             <div class="footer-content">
@@ -1071,18 +1084,24 @@ With our deep understanding of Nordic excellence and international market needs,
                     <img src="images/tuvenor-logo-rectangular1.png" alt="tuvenor Logo">
                 </div>
                 <div class="footer-info">
-                    
+                    <p data-key="footer-business-id">Business ID (Y-tunnus): 3518694-1</p>
+                    <p data-key="footer-location">Located in Espoo, Finland</p>
                     <p data-key="footer-copyright">© 2025 Tuvenor. All rights reserved.</p>
-                    
-                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="#" data-key="footer-privacy">Privacy Policy</a>
+                    <a href="#" data-key="footer-terms">Terms of Service</a>
                 </div>
             </div>
         </div>
-    </footer>... <script>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
         // Language Translations
         const translations = {
             en: {
-                'site-title': "Tuvenor | Finnish Engineering Exports to Middle East",
+                'site-title': "Tuvenor | Nordic Innovation for Global Markets",
                 'nav-home': "Home",
                 'nav-about': "About",
                 'nav-services': "Services",
@@ -1093,7 +1112,7 @@ With our deep understanding of Nordic excellence and international market needs,
                 'hero-cta': "Connect with Us",
                 'about-title': "About Tuvenor",
                 'about-p1': "Tuvenor specializes in outsourcing and exporting high-quality components, raw materials, and technology from Nordic countries to global markets. We serve businesses seeking advanced solutions, including industrial raw materials like bitumen for manufacturing, procurement services, and innovative sourcing. With our deep understanding of Nordic excellence and international market needs, we bridge the gap between suppliers and businesses worldwide, delivering reliable, tailored solutions for sustainable growth.",
-                'about-p2': "",
+                'about-p2': "", // This was empty in the provided text, so keeping it empty.
                 'services-title': "Our Services",
                 'service1-title': "Global Import-Export Trade",
                 'service1-desc': "We facilitate seamless trade between Nordic suppliers and international businesses, handling logistics, documentation, and regulatory compliance for products like raw materials and components.",
@@ -1122,7 +1141,7 @@ With our deep understanding of Nordic excellence and international market needs,
                 'email-button': "Mail with Us",
                 'footer-business-id': "Business ID (Y-tunnus): 3518694-1",
                 'footer-location': "Located in Espoo, Finland",
-                'footer-copyright': "© 2025 tuvenor. All rights reserved.",
+                'footer-copyright': "© 2025 Tuvenor. All rights reserved.",
                 'footer-privacy': "Privacy Policy",
                 'footer-terms': "Terms of Service"
             },
@@ -1138,7 +1157,7 @@ With our deep understanding of Nordic excellence and international market needs,
                 'hero-cta': "Ota meihin yhteyttä",
                 'about-title': "Tietoa Tuvenorista",
                 'about-p1': "Tuvenor on erikoistunut korkealaatuisten komponenttien, raaka-aineiden ja teknologian ulkoistamiseen ja vientiin Pohjoismaista globaaleille markkinoille. Palvelemme yrityksiä, jotka etsivät edistyksellisiä ratkaisuja, mukaan lukien teolliset raaka-aineet, kuten bitumi valmistukseen, hankintapalvelut ja innovatiivinen materiaalien hankinta. Syvällisen ymmärryksemme pohjoismaisesta huippuosaamisesta ja kansainvälisten markkinoiden tarpeista toimimme siltana toimittajien ja yritysten välillä maailmanlaajuisesti, tarjoten luotettavia, räätälöityjä ratkaisuja kestävään kasvuun.",
-                'about-p2': "",
+                'about-p2': "", // This was empty in the provided text, so keeping it empty.
                 'services-title': "Palvelumme",
                 'service1-title': "Globaali tuonti- ja vientikauppa",
                 'service1-desc': "Helpotamme sujuvaa kaupankäyntiä pohjoismaisten toimittajien ja kansainvälisten yritysten välillä, hoitaen logistiikan, dokumentaation ja säädösten noudattamisen tuotteille, kuten raaka-aineille ja komponenteille.",
@@ -1171,64 +1190,133 @@ With our deep understanding of Nordic excellence and international market needs,
                 'footer-privacy': "Tietosuojakäytäntö",
                 'footer-terms': "Käyttöehdot"
             }
+            // Add 'ar' (Arabic) translation here when provided by the user.
         };
 
-        // Language Toggle Functionality
-        const langToggles = document.querySelectorAll('.lang-toggle');
+        // Function to update content based on language
         const updateContent = (lang) => {
+            // Update all elements with data-key attributes
             document.querySelectorAll('[data-key]').forEach(element => {
                 const key = element.getAttribute('data-key');
                 if (translations[lang] && translations[lang][key]) {
                     element.textContent = translations[lang][key];
                 }
             });
-            document.title = translations[lang]['site-title'];
+            // Update the document title
+            if (translations[lang] && translations[lang]['site-title']) {
+                document.title = translations[lang]['site-title'];
+            }
+            // Update the body's data-lang attribute for CSS styling
             document.body.setAttribute('data-lang', lang);
-            langToggles.forEach(toggle => {
-                toggle.classList.toggle('active', toggle.getAttribute('data-lang') === lang);
-            });
         };
 
-        langToggles.forEach(toggle => {
-            toggle.addEventListener('click', (e) => {
-                e.preventDefault();
-                const lang = toggle.getAttribute('data-lang');
-                updateContent(lang);
+        // DOMContentLoaded ensures the script runs after the entire HTML is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle logic
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    mobileMenuToggle.classList.toggle('active');
+                });
+            }
+            
+            // Smooth scrolling for navigation links
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevent default anchor jump
+                    
+                    // Close mobile menu if open
+                    if (navMenu && navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        if (mobileMenuToggle) {
+                            mobileMenuToggle.classList.remove('active');
+                        }
+                    }
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId.length > 1) { // Ensure it's not just '#'
+                        const targetElement = document.querySelector(targetId);
+                        
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80, // Adjust for fixed header height
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
             });
-        });
+            
+            // Language toggle functionality
+            const languageToggles = document.querySelectorAll('.lang-toggle');
+            
+            languageToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevent default link behavior
+                    const lang = this.getAttribute('data-lang');
+                    
+                    // Update content with selected language
+                    updateContent(lang);
+                    
+                    // Update active classes for all language toggles
+                    languageToggles.forEach(t => {
+                        t.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+            });
 
-        // Mobile Menu Toggle
-        const menuToggle = document.querySelector('.mobile-menu-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            menuToggle.classList.toggle('open');
-        });... // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                    navMenu.classList.remove('active');
-                    menuToggle.classList.remove('open');
+            // Initial content update based on the default language set in HTML
+            // This reads the 'data-lang' attribute from the body, defaulting to 'en'
+            const initialLang = document.body.getAttribute('data-lang') || 'en';
+            // Ensure the correct active class is set on initial load
+            languageToggles.forEach(toggle => {
+                if (toggle.getAttribute('data-lang') === initialLang) {
+                    toggle.classList.add('active');
+                } else {
+                    toggle.classList.remove('active');
                 }
             });
-        });
+            updateContent(initialLang); // Apply initial translations
 
-        // Scroll-Triggered Animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
 
-        document.querySelectorAll('.hidden').forEach(element => {
-            observer.observe(element);
+            // Form submission handling (Netlify)
+            const contactForm = document.getElementById('contactForm');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    // For Netlify forms, you generally let the 'action' attribute handle redirection.
+                    // If you had custom client-side validation, you'd perform it here
+                    // and then potentially preventDefault() and submit via AJAX if validation fails.
+                    // As it stands, the form will submit and redirect to /thank-you.html as per its action.
+                });
+            }
+            
+            // Intersection Observer for scroll-triggered animations
+            if ('IntersectionObserver' in window) {
+                const animatedElements = document.querySelectorAll('.hidden'); // Elements to animate on scroll
+                
+                const animationObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible'); // Add 'visible' class to trigger CSS animation
+                            animationObserver.unobserve(entry.target); // Stop observing once visible
+                        }
+                    });
+                }, {
+                    threshold: 0.1, // Trigger when 10% of the element is visible
+                    rootMargin: '0px 0px -50px 0px' // Adjust when elements enter 50px before viewport bottom
+                });
+                
+                animatedElements.forEach(element => {
+                    animationObserver.observe(element);
+                });
+            }
         });
     </script>
 </body>
